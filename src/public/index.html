@@ -1,0 +1,55 @@
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Olist Frontend test</title>
+</head>
+
+<section>
+    <header>
+        <img class="logo" src="/imgs/brand.svg" />
+        <h4 class="subtitle">Crie sua conta</h4>
+    </header>
+
+    <form>
+        <div class="row">
+            <label for="name">Nome completo</label>
+            <input required type="text" id="name" name="name" />
+        </div>
+
+        <div class="row">
+            <label for="email">E-mail</label>
+            <input required type="email" id="email" name="email" />
+        </div>
+
+        <div class="row">
+            <label for="password">Senha</label>
+            <input required type="password" id="password" name="password" pattern="(?=.*[0-9])(?=.*[A-Z]).{6,}" />
+            <span class="col-verify"></span>
+            <span class="col-verify"></span>
+            <span class="col-verify"></span>
+
+            <ul class="list-password">
+                <li>
+                    <span class="req-1"></span>Pelo menos 6 caracteres
+                </li>
+                <li>
+                    <span class="req-2"></span>Pelo menos 1 letra maiúscula
+                </li>
+                <li>
+                    <span class="req-3"></span>Pelo menos 1 número
+                </li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <label for="password_confirm">Confirme sua senha</label>
+            <input required type="password" id="password_confirm" name="password_confirm" />
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn-submit" disabled>
+                Criar conta
+            </button>
+        </div>
+    </form>
+</section>

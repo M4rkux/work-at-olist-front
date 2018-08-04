@@ -1,0 +1,134 @@
+$logo-color: #0C29D0;
+$subtitle-color: #312F4F;
+$requirement-color-default: #EAEAF4;
+$requirement-color-success: #1FE6A8;
+$requirement-color-warning: #F7BC1C;
+$requirement-color-error: #F79682;
+
+body {
+    font-family: 'SF Pro Text', 'Roboto', sans-serif;
+    background-color: #E5E5E5;
+    color: #696D8C;;
+
+    header {
+        text-align: center;
+    }
+    .logo {
+        text-align: center;
+        color: $logo-color;
+    }
+
+    .subtitle {
+        text-align: center;
+        line-height: 31px;
+        font-size: 22px;
+
+        color: $subtitle-color;
+    }
+
+    .row {
+        margin-top: 24px;
+    }
+
+    section {
+        width: 515px;
+        top: 80px;
+        padding: 60px 70px 48px 70px;
+        margin: auto;
+
+        background: #FFFFFF;
+        border: 3px solid #F2F2F2;
+        box-sizing: border-box;
+    }
+
+    label {
+        line-height: 26px;
+        font-size: 16px;
+
+        margin-bottom: 8px;
+    }
+
+    input {
+        outline: none;
+        background: #FFFFFF;
+        border: 1px solid #B6B9D0;
+        box-sizing: border-box;
+        box-shadow: inset 0px 3px 3px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        height: 44px;
+        margin-top: 8px;
+        padding: 15px 0px;
+
+        font-family: Soleil, 'Roboto';
+        line-height: 26px;
+        font-size: 16px;
+        text-indent: 16px;
+
+        color: #312F4F;
+
+        &.success {
+            border-color: $requirement-color-success;
+        }
+        &.error {
+            border-color: $requirement-color-error;
+        }
+    }
+
+    .col-verify {
+        width: 119.67px;
+        height: 8px;
+        display: inline-block;
+
+        background: $requirement-color-default;
+        border-radius: 10px;
+
+        &.success {
+            background-color: $requirement-color-success;
+        }
+        &.warning {
+            background-color: $requirement-color-warning;
+        }
+        &.error {
+            background-color: $requirement-color-error;
+        }
+    }
+
+    .btn-submit {
+        height: 52px;
+        background-color: #17D499;
+        text-transform: capitalize;
+        width: 100%;
+        border: none;
+
+        line-height: 26px;
+        font-size: 16px;
+        text-align: center;
+
+        color: #FFFFFF;
+
+        &:disabled {
+          background-color: grey;  
+        }
+    }
+
+    ul.list-password {
+        padding-left: 0px;
+        list-style: none;
+
+        span {
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: $requirement-color-default;
+            display: inline-block;
+            margin-right: 8px;
+
+            &.success {
+                background-color: $requirement-color-success;
+            }
+            &.error {
+                background-color: $requirement-color-error;
+            }
+        }
+    }
+}
