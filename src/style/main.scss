@@ -1,14 +1,18 @@
+
+$bg-color: #E5E5E5;
 $logo-color: #0C29D0;
-$subtitle-color: #312F4F;
+$text-color: #312F4F;
+$label-color: #696D8C;
 $requirement-color-default: #EAEAF4;
 $requirement-color-success: #1FE6A8;
 $requirement-color-warning: #F7BC1C;
 $requirement-color-error: #F79682;
+$submit-background-color: #17D499;
 
 body {
     font-family: 'SF Pro Text', 'Roboto', sans-serif;
-    background-color: #E5E5E5;
-    color: #696D8C;;
+    background-color: $bg-color;
+    color: $label-color;
 
     header {
         text-align: center;
@@ -22,8 +26,9 @@ body {
         text-align: center;
         line-height: 31px;
         font-size: 22px;
-
-        color: $subtitle-color;
+        font-weight: 500;
+        margin-bottom: 37px;
+        color: $text-color;
     }
 
     .row {
@@ -31,7 +36,8 @@ body {
     }
 
     section {
-        width: 515px;
+        width: 100%;
+        max-width: 515px;
         top: 80px;
         padding: 60px 70px 48px 70px;
         margin: auto;
@@ -64,7 +70,7 @@ body {
         font-size: 16px;
         text-indent: 16px;
 
-        color: #312F4F;
+        color: $text-color;
 
         &.success {
             border-color: $requirement-color-success;
@@ -74,8 +80,8 @@ body {
         }
     }
 
-    .col-verify {
-        width: 119.67px;
+    .password-strength {
+        width: 32%;
         height: 8px;
         display: inline-block;
 
@@ -95,8 +101,8 @@ body {
 
     .btn-submit {
         height: 52px;
-        background-color: #17D499;
-        text-transform: capitalize;
+        background-color: $submit-background-color;
+        font-weight: 600;
         width: 100%;
         border: none;
 
@@ -106,9 +112,6 @@ body {
 
         color: #FFFFFF;
 
-        &:disabled {
-          background-color: grey;  
-        }
     }
 
     ul.list-password {
@@ -130,5 +133,68 @@ body {
                 background-color: $requirement-color-error;
             }
         }
+    }
+
+    .ellipse {
+        width: 10px;
+        height: 10px;
+        background-color: #FFFFFF;
+        border-radius: 50%;
+        transform: scale(0.4);
+        display: none;
+
+        &.e2 {
+            animation-delay: 0.15s;
+        }
+        &.e3 {
+            animation-delay: 0.3s;
+        }
+    }
+
+    .btn-submit.loading {
+        .lbl-criar-conta {
+            display: none;
+        }
+        .ellipse {
+            animation-duration: 0.45s;
+            animation-direction: alternate;
+            animation-iteration-count: infinite;
+            animation-name: animate;
+            animation-timing-function: ease-in-out;
+            display: inline-block;
+        }
+    }
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(0.4);
+    }
+    100% {
+        transform: scale(1.0);
+    }
+}
+
+.confirmation {
+    text-align: center;
+    margin: 92px 60px;
+
+    .subtitle {
+        margin-bottom: 21px;
+        margin-top: 16px;
+    }
+
+    img.checked {
+        border: 3px solid #17D499;
+        border-radius: 50%;
+        padding: 29px 24px 26px 24px;
+        width: 35px;
+        height: 26px;
+    }
+
+    span {
+        line-height: 26px;
+        font-size: 16px;
+        color: #312F4F;
     }
 }

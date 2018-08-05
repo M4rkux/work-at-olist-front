@@ -7,10 +7,10 @@
 <section>
     <header>
         <img class="logo" src="/imgs/brand.svg" />
-        <h4 class="subtitle">Crie sua conta</h4>
     </header>
-
+    
     <form>
+        <h4 class="subtitle">Crie sua conta</h4>
         <div class="row">
             <label for="name">Nome completo</label>
             <input required type="text" id="name" name="name" />
@@ -24,9 +24,9 @@
         <div class="row">
             <label for="password">Senha</label>
             <input required type="password" id="password" name="password" pattern="(?=.*[0-9])(?=.*[A-Z]).{6,}" />
-            <span class="col-verify"></span>
-            <span class="col-verify"></span>
-            <span class="col-verify"></span>
+            <span class="password-strength"></span>
+            <span class="password-strength"></span>
+            <span class="password-strength"></span>
 
             <ul class="list-password">
                 <li>
@@ -48,7 +48,10 @@
 
         <div class="row">
             <button type="submit" class="btn-submit" disabled>
-                Criar conta
+                <span class="lbl-criar-conta">Criar conta</span>
+                <span class="ellipse e1"></span>
+                <span class="ellipse e2"></span>
+                <span class="ellipse e3"></span>
             </button>
         </div>
     </form>
