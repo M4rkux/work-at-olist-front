@@ -1,13 +1,14 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // Require  html-webpack-plugin plugin
+const HtmlWebpackPlugin = require('html-webpack-plugin'); 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: __dirname + "/src/app/index.js", // webpack entry point. Module to start building dependency graph
+  entry: __dirname + "/src/app/index.js", 
   output: {
-    path: __dirname + '/dist', // Folder to store generated bundle
-    filename: 'bundle.js',  // Name of generated bundle after build
-    publicPath: '/' // public URL of the output directory when referenced in a browser
+    path: __dirname + '/dist', 
+    filename: 'bundle.js',  
+    publicPath: '/' 
   },
   module: {
     rules: [
@@ -23,24 +24,26 @@ module.exports = {
             loader: 'raw-loader'
         },
         {
-            test: /\.(sass|scss)$/,
-            use: [{
-                loader: "style-loader" // creates style nodes from JS strings
-            }, {
-                loader: "css-loader" // translates CSS into CommonJS
-            }, {
-                loader: "sass-loader" // compiles Sass to CSS
-            }]
-          }
+            test: /\.(sa|sc|c)ss$/,
+            use: [
+                MiniCssExtractPlugin.loader,
+                'css-loader',
+                'sass-loader',
+            ]
+        }
     ]
   },
-  plugins: [  // Array of plugins to apply to build chunk
+  plugins: [  
     new HtmlWebpackPlugin({
         template: __dirname + "/src/public/index.html",
         inject: 'body'
     }),
-    new UglifyJSPlugin(),  // minify the chunk
-    new CopyWebpackPlugin([{  // copy assets to public folder
+    new MiniCssExtractPlugin({
+        filename: "[name].css",
+        chunkFilename: "[id].css"
+    }),
+    new UglifyJSPlugin(),  
+    new CopyWebpackPlugin([{  
         from: __dirname + '/src/public'
     }])
   ]
