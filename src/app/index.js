@@ -1,6 +1,5 @@
 import '../style/main.scss';
 import { AccountService } from './account.service';
-import confirmation from '../public/confirmation.html'
 
 const allInputs = Array.from(document.querySelectorAll('input'));
 const btnSubmit = document.querySelector('.btn-submit');
@@ -18,6 +17,12 @@ const passwordStrength = document.querySelectorAll('.password-strength');
 const password = document.querySelector('#password');
 
 const form = document.querySelector('form');
+
+const confirmation = `
+    <img class="checked" src="/imgs/checked.svg" />
+    <h4 class="subtitle">Tudo certo</h4>
+    <span>Verifique sua caixa de entrada para confirmar seu e-mail.</span>
+`;
 
 allInputs.forEach(elem => {
     elem.addEventListener('keyup', function () {
@@ -46,6 +51,7 @@ form.addEventListener('submit', function(e) {
     AccountService.create(account).then(result => { 
         if(result.ok) {
             const div = document.createElement('div');
+            div.classList.add('confirmation');
             div.innerHTML = confirmation;
             form.parentNode.appendChild(div);
             form.parentNode.removeChild(form);

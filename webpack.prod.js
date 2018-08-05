@@ -20,10 +20,6 @@ module.exports = {
           ]
         },
         {
-            test: /\.html/,
-            loader: 'raw-loader'
-        },
-        {
             test: /\.(sa|sc|c)ss$/,
             use: [
                 MiniCssExtractPlugin.loader,
