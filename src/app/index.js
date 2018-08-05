@@ -95,7 +95,7 @@ function checkPassword(elem) {
 function checkInput(elem, changeClass = false) {
     let valid = elem.checkValidity();
 
-    if (elem.name === 'password') {
+    if (elem.name === 'password' && changeClass) {
         checkPassword(elem);
     }
     else if (elem.name === 'password_confirm') {
