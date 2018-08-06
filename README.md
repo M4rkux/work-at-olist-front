@@ -1,104 +1,139 @@
 # Work at Olist Frontend
+The purpose of this project is to test my skills to see if I can get into the biggest company in the world.
+For this, this project must have a page to register accounts with a strong password.
 
-[Olist](https://olist.com/) is a company that offers an integration platform
-for sellers and marketplaces allowing them to sell their products across
-multiple channels.
+## Demo
 
-The Olist [development team](https://engineering.olist.com/) consists of
-developers who love what they do. Our agile development processes and our
-search for the best development practices provide a great environment for
-professionals who like to create quality software in good company.
+This application is hosted at Github Pages.
+Check it out: https://m4rkux.github.io/work-at-olist-front/
 
-We are always looking for good programmers who love to improve their work. We
-give preference to small teams with qualified professionals over large teams
-with average professionals.
+### Prerequisites
+You need to have [node](https://nodejs.org) and [npm](https://www.npmjs.com/) and optionally [yarn](https://yarnpkg.com)
+After installing **node** and **npm** you must run the following command to install **yarn**
+```shell
+npm install yarn -g
+```
 
-This repository contains a problem used to evaluate the candidate skills.
-It's important to notice that solving the problem is just a
-part of what will be evaluated. We also consider other programming disciplines
-like documentation, testing, commit timeline, design and coding best
-practices.
+## Installing / Getting started
 
-Hints:
+To install all dependencies you need to run:
+```shell
+yarn
+```
+or 
+```shell
+npm install
+```
 
-* Carefully read the specification to understand all the problem and
-  artifact requirements before starting.
-* Check the recommendations and reference material at the end of this
-  specification.
+To see the project in action you need to run:
+```shell
+yarn start
+```
+or
+```shell
+npm start
+```
+And you can check it out at: http://localhost:7700/
 
+### Setting up Dev
 
-## How to participate
+Clone the project
+```shell
+git clone https://github.com/M4rkux/work-at-olist-front.git
+```
 
-* Make a fork of this repository on Github. If you aren't comfortable with
-   creating a public fork of this project, make a private repository
-   (gitlab offers free private repos) and add developer permission for the
-   user [@tech-hiring](https://gitlab.com/tech-hiring) on project;
-* Follow the instructions on README.md (this file);
-* Deploy your project on a host service (we recommend
-   [Heroku](https://heroku.com) or [Netlify](http://netlify.com/));
-* Apply for the position at our [career page](https://www.99jobs.com/olist)
-   with:
-   * Link to the fork on Github (or gitlab.com);
-   * Link to the project in the deployed host service.
+or if you want to use ssh ([see how to configure ssh](https://help.github.com/articles/connecting-to-github-with-ssh/)):
+```shell
+git clone git@github.com:M4rkux/work-at-olist-front.git
+```
 
+Go to the folder:
+```shell
+cd work-at-olist-front/
+```
 
-## Specification
+And install all the dependencies:
+```shell
+yarn
+```
+or with npm
+```shell
+npm install
+```
 
-Today, security is everything, but users still have the bad habit of creating
-accounts with weak passwords, and it is essential that we can offer the user
-ways to keep them safe. So, we must do our best to ensure the safety of our
-users.
+### Deploying / Publishing
 
-For this, you should implement a **new account** page, composed of Name, Email
-and Password with a strength measure indicator and Password confirmation. All
-these fields are required.
+To build the project, compile the Sass and minify everything you need to run:
+```shell
+yarn build
+```
+or with npm
+```shell
+npm build
+```
+And it will make a folder **/dist** with the project ready to go to production
 
-
-## Style Guide
-
-The design of the page can be found in the link below:
-
-[Front-End Test Style Guide](https://www.figma.com/file/rsSlx8jDHls6nWXziElWTk/olist----front-end-test)
-
-* It's very important that you build this page exactly as proposed, pixel by
-pixel.
-
-
-## Instructions
-
-* The submit button must be disabled until the form is valid.
-* The Name is required and Email must be a valid email.
-* The invalid input fields should have a border color like the style guide.
-* The valid input fields should have a border color like the style guide.
-* The Password input must make use of the sequence of validation presented in
-  the Style Guide
-* If the form is valid, the submit button should be clickable
-* When the form is submitted, it should present a loading status.
-
-
-## Project Requirements:
-
-* Application must be written in HTML, JavaScript and CSS. You can only make
-  use of a CSS preprocessor.
-* You cannot use any Javascript library or framework with the exception of
-  polyfills.
-* Your page must support all modern browsers and IE 11+.
-* Write the project documentation containing: [Sample](https://github.com/elsewhencode/project-guidelines/blob/master/README.sample.md)
-  * Installing and testing instructions;
-  * Brief description of the work environment used to run this
-    project (Computer/operating system, text editor/IDE, libraries, etc).
-* Every text or code must be in English.
+### Built With
+* [npm](https://www.npmjs.com/)
+* [yarn](https://yarnpkg.com)
+* [webpack](https://webpack.js.org/)
+* [babel](https://babeljs.io/)
+* [Sass](https://sass-lang.com/)
 
 
-## Recommendations
+## Configuration
 
-* Write tests!
-* Use [SOLID](https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)), [KISS](https://en.wikipedia.org/wiki/KISS_principle), [YAGNI](https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it) and [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
-* Use programming good practices;
-* Use [git best practices](https://www.git-tower.com/learn/git/ebook/en/command-line/appendix/best-practices),
-  with clear messages (written in English);
-* If you build this with Web Components it will be a plus.
-* Feel free to use any language to serve the page if you need. Using Python,
-  Go or Elixir is a plus.
+If you want/need to change the configurations of the build or development mode you need to edit these files in the root:
+ * **webpack.config.js**
+ * **webpack.prod.js**
 
-**Have fun!**
+## Tests
+
+To run the unit tests you need to run:
+```shell
+yarn test
+```
+or
+```shell
+npm test
+```
+
+You can find them at **/test** folder.
+
+## Style guide
+
+This project uses [standard](https://github.com/standard/standard) lint.
+
+You can check this out with
+```shell
+yarn lint
+```
+or
+```shell
+npm lint
+```
+
+## Api Reference
+
+This project uses [mock api](https://www.mockapi.io/) to send the data of the accounts, and you can see all the accounts created here: http://5b664ca59daa3f0014cb8e7c.mockapi.io/account
+
+
+## Work Environment
+
+ * Laptop Asus X555B
+   * CPU: Core i5-6200
+   * GPU: NVIDIA GeForce 940m
+   * Memory: 8gb
+   * SO: Fedora 28 x64
+   * HDD: 1TB
+
+ * Desktop
+   * CPU: Phenom II x6
+   * GPU: NVIDIA GeForce GTX ROG Strix 1070
+   * Memory: 8gb
+   * SO: Windows 10 x64
+   * SSD: 120gb
+   * HDD: 1TB
+   * PSU: Gamemax 1050w
+
+ * Text editor: [Visual Studio Code](https://code.visualstudio.com/)
